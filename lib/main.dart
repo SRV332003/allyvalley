@@ -11,29 +11,39 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: DefaultTabController(
+      home: const DefaultTabController(
         length: 3,
         child: Scaffold(
-          appBar: AppBar(
-            bottom: const TabBar(
+          body: TabBarView(children: [
+             Center(child: Text("home screen"),),
+             Center(child: Text("Searc screen"),),
+             Center(child: Text("Setting screen"),),
+          ],),
+          bottomNavigationBar:  TabBar(
+            physics: BouncingScrollPhysics(),
+             unselectedLabelColor: Colors.amber,
               tabs: [
                 Tab(
                   icon: Icon(Icons.home_filled),
+
                 ),
                 Tab(
                   icon: Icon(Icons.search_outlined),
+                  
                 ),
                 Tab(
                   icon: Icon(Icons.settings),
+                  
                 )
               ],
             ),
-          ),
+
         ),
       )
     );
