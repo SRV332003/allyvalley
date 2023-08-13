@@ -16,7 +16,26 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: null,
+      home: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: const TabBar(
+              tabs: [
+                Tab(
+                  icon: Icon(Icons.home_filled),
+                ),
+                Tab(
+                  icon: Icon(Icons.search_outlined),
+                ),
+                Tab(
+                  icon: Icon(Icons.settings),
+                )
+              ],
+            ),
+          ),
+        ),
+      )
     );
   }
 }
