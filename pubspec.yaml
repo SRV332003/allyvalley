@@ -1,4 +1,4 @@
-name: project_p
+name: allyvalley
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -31,14 +31,16 @@ dependencies:
   flutter:
     sdk: flutter
 
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  flutter_native_splash: ^2.3.2
+  flutter_launcher_icons: ^0.13.1
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -59,10 +61,36 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/
+    - assets/icons/
 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/ic_app_icon.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/icons/ic_app_icon.png"
+    background_color: "#ffffff"
+  windows:
+    generate: true
+    image_path: "assets/icons/ic_app_icon.png"
+    icon_size: 65 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/icons/ic_app_icon.png"
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/splash_icon.png
+
+  android_12:
+    image: assets/images/splash_icon.png
+    icon_background_color: "#ffffff"
+
+  web: false
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
